@@ -7,7 +7,7 @@ import android.util.Patterns
 class User(private var email: String, private var password: String) : BaseObservable() {
 
     val isDataValid: Boolean
-        get() = (!TextUtils.isEmpty(getEmail()))
+        get() = !TextUtils.isEmpty(getEmail())
                 && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches()
                 && getPassword().length > 6
 
