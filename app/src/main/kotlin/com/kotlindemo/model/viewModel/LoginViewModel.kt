@@ -51,15 +51,25 @@ class LoginViewModel(private val listener: LoginResultCallbacks) : ViewModel() {
         }
 
     // create function to process Login button Clicked
+    @SuppressWarnings
     fun onLoginClicked(v: View) {
 
-        val logs  = String.format("Email: %s(%d), Password: %s(%d)", user.getEmail(), user.getEmail().length, user.getPassword(), user.getPassword().length)
-
+        val logs: String = String.format(
+            "Email: %s(%d), Password: %s(%d)",
+            user.getEmail(),
+            user.getEmail().length,
+            user.getPassword(),
+            user.getPassword().length
+        )
         Log.e("TAG", logs)
 
-        if (user.isDataValid)
-            listener.onSuccess("Login Success")
-        else
-            listener.onError("Login Error")
+        val validationCode: Int = user.getValidationCode()
+
+        when (validationCode) {
+            -1 -> listener.onSuccess("Login Successful")
+            0 -> listener.onError("Email not provided")
+            1 -> listener.onError("Wrong Email Pattern")
+            2 -> listener.onError("Invalid Password Length")
+        }
     }
 }
