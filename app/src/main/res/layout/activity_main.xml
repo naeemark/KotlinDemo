@@ -45,6 +45,18 @@
                     android:onClick="@{viewModel::onLoginClicked}"
                     android:text="@string/login"/>
 
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.success}"
+                    android:id="@+id/textView_success"/>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.failure}"
+                    android:id="@+id/textView_failure"/>
+
         </LinearLayout>
     </RelativeLayout>
 

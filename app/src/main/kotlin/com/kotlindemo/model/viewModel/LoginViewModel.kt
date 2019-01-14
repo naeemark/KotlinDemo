@@ -1,14 +1,27 @@
 package com.kotlindemo.model.viewModel
 
 import android.arch.lifecycle.ViewModel
+import android.databinding.ObservableField
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import com.kotlindemo.model.User
-import com.kotlindemo.model.interfaces.LoginResultCallbacks
+import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
 
-class LoginViewModel(private val listener: LoginResultCallbacks) : ViewModel() {
+class LoginViewModel: ViewModel() {
+
+    val success: ObservableField<String> = ObservableField<String>()
+    val failure: ObservableField<String> = ObservableField<String>()
+    private val successSubject: PublishSubject<String> = PublishSubject.create()
+    val successObservable: Observable<String>
+        get() = successSubject
+
+    private val failureSubject: PublishSubject<String> = PublishSubject.create()
+    val failureObservable: Observable<String>
+        get() = failureSubject
+
 
     private val user: User
 
@@ -66,10 +79,22 @@ class LoginViewModel(private val listener: LoginResultCallbacks) : ViewModel() {
         val validationCode: Int = user.getValidationCode()
 
         when (validationCode) {
-            -1 -> listener.onSuccess("Login Successful")
-            0 -> listener.onError("Email not provided")
-            1 -> listener.onError("Wrong Email Pattern")
-            2 -> listener.onError("Invalid Password Length")
+            -1 -> {
+                success.set("Login Successfull")
+                successSubject.onNext("Login Successfull")
+            } //listener.onSuccess("Login Successful")
+            0 -> {
+                failure.set("Email not provided")
+                failureSubject.onNext("Email not provided")
+            }
+            1 -> {
+                failure.set("Wrong Email Pattern")
+                failureSubject.onNext("Wrong Email Pattern")
+            }
+            2 -> {
+                failure.set("Invalid Password Length")
+                failureSubject.onNext("Invalid Password Length")
+            }
         }
     }
 }
