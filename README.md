@@ -1,5 +1,7 @@
 # Kotlin Demo #
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/09f66c70f1ca400180a4148efd868a45)](https://app.codacy.com/app/muhammad-naeem_arshad/KotlinDemo?utm_source=github.com&utm_medium=referral&utm_content=naeemark/KotlinDemo&utm_campaign=Badge_Grade_Settings)
+
 A sample application to explore Kotlin Features.
 
 ### Why this Repository? ###
