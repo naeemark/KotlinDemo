@@ -64,3 +64,7 @@ freeline_project_description.json
 
 
 kotlin-ultimate/
+
+
+#sonarQube
+.scannerwork/
