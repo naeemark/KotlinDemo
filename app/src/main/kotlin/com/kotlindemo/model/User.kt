@@ -4,6 +4,14 @@ import android.databinding.BaseObservable
 import android.text.TextUtils
 import android.util.Patterns
 
+/**
+ * A class to contain attributes for User
+ *
+ * @property email String
+ * @property password String
+ * @property isDataValid Boolean
+ * @constructor
+ */
 class User(private var email: String, private var password: String) : BaseObservable() {
 
     val isDataValid: Boolean
