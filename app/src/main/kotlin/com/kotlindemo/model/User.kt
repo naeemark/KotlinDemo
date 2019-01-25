@@ -19,6 +19,10 @@ class User(private var email: String, private var password: String) : BaseObserv
                 && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches()
                 && getPassword().length > 6
 
+    /**
+     * Gets Validation code on the base of provided data
+     * @return Int
+     */
     fun getValidationCode(): Int {
         if (TextUtils.isEmpty(getEmail()))
             return 0 // Email not provided
@@ -30,21 +34,37 @@ class User(private var email: String, private var password: String) : BaseObserv
             return -1
     }
 
+    /**
+     * Getter
+     * @return String
+     */
     fun getEmail(): String {
 
         return email
     }
 
+    /**
+     * Setter
+     * @param email String
+     */
     fun setEmail(email: String) {
 
         this.email = email
     }
 
+    /**
+     * Getter
+     * @return String
+     */
     fun getPassword(): String {
 
         return password
     }
 
+    /**
+     * Setter
+     * @param email String
+     */
     fun setPassword(password: String) {
 
         this.password = password
