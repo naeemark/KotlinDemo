@@ -68,3 +68,5 @@ kotlin-ultimate/
 
 #sonarQube
 .scannerwork/
+sonar-project.properties
+
