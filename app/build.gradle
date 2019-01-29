@@ -45,6 +45,9 @@ android {
     lintOptions {
         abortOnError false
     }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
@@ -88,6 +91,9 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.robolectric:robolectric:4.0.2'
+
+    implementation 'com.tolstykh.textviewrichdrawable:textview-rich-drawable:0.3.2'
+
 
 }
 

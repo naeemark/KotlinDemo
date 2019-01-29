@@ -3,4 +3,21 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="cherry">#f40931</color>
+    <color name="cherry10">#1af40931</color>
+
+
+    <color name="cherryRed">#f40931</color>
+    <color name="cherryRedAlpha10">#1af40931</color>
+
+    <color name="border">#eeeeee</color>
+    <color name="white">#fff</color>
+    <color name="languageColorSelected">@color/cherryRed</color>
+    <color name="languageColorNormal">#111111</color>
+    <drawable name="languageColorSelected">@color/cherryRed</drawable>
+    <drawable name="languageColorNormal">#111111</drawable>
+
+
 </resources>
