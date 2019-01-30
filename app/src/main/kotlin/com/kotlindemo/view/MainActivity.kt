@@ -17,29 +17,48 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.inner.*
+import kotlinx.android.synthetic.main.inner_language_preference_buttons.*
 
 class MainActivity : AppCompatActivity() {
 
     private val disposables: CompositeDisposable = CompositeDisposable()
+
+    var binding: InnerBinding? = null
+    val langPref: LanguagePreference = LanguagePreference()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
 
-        val binding: InnerBinding = DataBindingUtil.setContentView(
-            this, R.layout.inner)
+        binding = DataBindingUtil.setContentView(this, R.layout.inner)
 
-        binding.lang = LanguagePreference()
-
+        binding?.lang = langPref
 
 
     }
 
-    fun checkChanged(v: View){
 
-        Toast.makeText(this, "Check Changed", Toast.LENGTH_SHORT).show()
+    fun switchSelection(view: View) {
+
+        when (view.tag) {
+            "ENGLISH" -> langPref.ENGLISH = !langPref.ENGLISH
+            "CHINESE" -> langPref.CHINESE = !langPref.CHINESE
+            "BHASA" -> langPref.BHASA = !langPref.BHASA
+            "TAMIL" -> langPref.TAMIL = !langPref.TAMIL
+        }
+
+
+        binding?.invalidateAll()
+
     }
+
+
+    fun savLanguageSelection(view:View){
+
+        println(langPref.toString())
+    }
+
 //        val viewModel = ViewModelProviders.of(this, LoginViewModelFactory()).get(LoginViewModel::class.java)
 //        activityMainBinding.viewModel = viewModel
 //

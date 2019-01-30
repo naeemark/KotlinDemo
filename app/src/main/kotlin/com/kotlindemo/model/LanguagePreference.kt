@@ -1,17 +1,20 @@
 package com.kotlindemo.model
 
-import android.graphics.Color
+import android.view.View
 
-class LanguagePreference{
 
-    val ENGLISH = true
-    val CHINESE = false
-    val BHASA = false
-    val TAMIL = false
+class LanguagePreference() {
 
-    val str = "Testing by class"
-    val colorNormal = "#111111"
-    val colorSelected = "#f40931"
+    var ENGLISH = true
+    var CHINESE = false
+    var BHASA = false
+    var TAMIL = false
+
+    fun isValidSelection(): Boolean = (!ENGLISH and !CHINESE and !BHASA and !TAMIL).not()
+
+    override fun toString(): String =
+        "LanguagePreference(ENGLISH=$ENGLISH, CHINESE=$CHINESE, BHASA=$BHASA, TAMIL=$TAMIL)"
+
 
 }
 
