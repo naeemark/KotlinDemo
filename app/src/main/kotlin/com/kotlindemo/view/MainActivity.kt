@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.kotlindemo.R
+import com.kotlindemo.databinding.FragmentOnboardingPrefLanguageBinding
 import com.kotlindemo.databinding.InnerBinding
 import com.kotlindemo.model.LanguagePreference
 import com.kotlindemo.model.User
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private val disposables: CompositeDisposable = CompositeDisposable()
 
-    var binding: InnerBinding? = null
+    var binding: FragmentOnboardingPrefLanguageBinding? = null
     val langPref: LanguagePreference = LanguagePreference()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        binding = DataBindingUtil.setContentView(this, R.layout.inner)
+        binding = DataBindingUtil.setContentView(this, R.layout.fragment_onboarding_pref_language)
 
         binding?.lang = langPref
 
