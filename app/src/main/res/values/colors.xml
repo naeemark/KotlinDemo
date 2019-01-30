@@ -14,8 +14,10 @@
 
     <color name="border">#eeeeee</color>
     <color name="white">#fff</color>
+    <color name="grey">#111111</color>
+
     <color name="languageColorSelected">@color/cherryRed</color>
-    <color name="languageColorNormal">#111111</color>
+    <color name="languageColorNormal">@color/grey</color>
     <color name="colorBackground">@color/white</color>
     <drawable name="languageColorSelected">@color/cherryRed</drawable>
     <drawable name="languageColorNormal">#111111</drawable>

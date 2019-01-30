@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun savLanguageSelection(view:View){
+    fun saveLanguageSelection(view:View){
 
         println(langPref.toString())
     }
