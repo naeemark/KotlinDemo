@@ -5,40 +5,29 @@
         tools:context=".view.MainActivity">
 
     <data>
-
         <variable
                 name="isLanguageSelected"
                 type="Boolean"/>
+
         <variable
                 name="languageName"
                 type="String"/>
     </data>
 
-    <merge
-            tools:showIn="@layout/inner">
-        <RelativeLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:onClick="switchSelection"
-                android:tag="@{languageName}"
-                android:background="@{isLanguageSelected ? @drawable/bg_pref_language_selected : @drawable/bg_pref_language_normal }">
+    <RelativeLayout
+            style="@style/LanguageButtonContainer"
+            android:tag="@{languageName}"
+            android:onClick="switchSelection"
+            android:background="@{isLanguageSelected ? @drawable/bg_pref_language_selected : @drawable/bg_pref_language_normal }">
 
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_alignParentStart="true"
-                    android:src="@{isLanguageSelected ? @drawable/ic_language_pref_checkbox_selected : @drawable/ic_language_pref_checkbox_normal }"
-                    android:layout_height="wrap_content"/>
+        <ImageView
+                style="@style/CheckMarkImageView"
+                android:src="@{isLanguageSelected ? @drawable/ic_language_pref_checkbox_selected : @drawable/ic_language_pref_checkbox_normal }"/>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@{isLanguageSelected ? @color/languageColorSelected : @color/languageColorNormal}"
-                    android:layout_centerInParent="true"
-                    android:text="@{languageName}"/>
-        </RelativeLayout>
-    </merge>
+        <TextView
+                style="@style/LanguageNameTextView"
+                android:textColor="@{isLanguageSelected ? @color/languageColorSelected : @color/languageColorNormal}"
+                android:text="@{languageName}"/>
+    </RelativeLayout>
+
 </layout>
