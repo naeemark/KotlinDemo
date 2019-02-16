@@ -49,6 +49,11 @@ Demonstrating TDD for the development.
 
 #### Instrumentational Testing ####
 
+
+## References ##
+
+- [Kotlin Reactive Programming](https://code.tutsplus.com/tutorials/kotlin-reactive-programming-with-rxjava-and-rxkotlin--cms-31577)
+
 ## Contribution guidelines ##
 
 - forks are always appreciated
